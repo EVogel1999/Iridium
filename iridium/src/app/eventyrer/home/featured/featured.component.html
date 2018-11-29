@@ -1,0 +1,9 @@
+<div class="featureWrapper">
+    <div class="title">
+        Featured
+    </div>
+
+    <div class="featureCardWrapper">
+        <app-card *ngFor="let f of featured" [campaign] = 'f'></app-card> 
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="navbar">
+  <div *ngIf="authService.isLoggedIn">
+    <button class="buildBtn"></button>
+    <button class="libraryBtn"></button>
+    <button class="userBtn"></button>
+  </div>
+  <div *ngIf="!authService.isLoggedIn">
+      <button class="loginBtn" routerLink="/auth" routerLinkActive="active">Sign In</button>
+  </div>
+</div>
+<router-outlet></router-outlet>

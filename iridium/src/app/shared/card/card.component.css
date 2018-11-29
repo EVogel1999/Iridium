@@ -1,0 +1,31 @@
+.card {
+    background-color: white;
+    width: 300px;
+    height: 350px;
+    margin: 10px;
+    overflow: hidden;
+    float: left;
+    box-shadow: 1px 1px 10px #444444;
+    cursor: pointer;
+    z-index: 1;
+}
+.card::after {
+    clear: both;
+}
+.cTitle{
+    background-image: linear-gradient(to bottom right, #35637A, rgb(24, 141, 199));
+    width: 84%;
+    padding: 8%;
+    height: 20px;
+    text-align: left;
+    font-size: 20px;
+    color: white;
+}
+.content {
+    padding: 10px;
+    font-size: 16px;
+    color: #424242;
+}
+.pad {
+    padding-top: 1px;
+}

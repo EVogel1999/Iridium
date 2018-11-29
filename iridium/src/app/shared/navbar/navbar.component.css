@@ -1,0 +1,68 @@
+button {
+    width: 75px;
+    height: 75px;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 14px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    z-index: 1;
+}
+.userBtn {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
+    background-image: url('../../../assets/pictures/User.png');
+}
+.userBtn:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+    opacity: .8;
+    cursor: pointer;
+}
+.libraryBtn {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
+    background-image: url('../../../assets/pictures/Library.png');
+}
+.libraryBtn:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+    opacity: .8;
+    cursor: pointer;
+}
+.buildBtn {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
+    background-image: url('../../../assets/pictures/Build.png');
+}
+.buildBtn:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+    opacity: .8;
+    cursor: pointer;
+}
+.loginBtn {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+}
+.loginBtn:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+    opacity: .8;
+    cursor: pointer;
+}

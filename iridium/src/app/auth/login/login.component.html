@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div [hidden]="!loginError" class="loginError">
+    Your username or password is incorrect.  Please try again.
+  </div>
+  <div class="tile">
+    <div class="title">
+      Welcome Back!
+      <hr>
+    </div>
+    <form #form="ngForm" (ngSubmit)="login()">
+      <div class="formGroup">
+        <input type="text" id="username" name="username" placeholder="Username" required [(ngModel)]="loginInfo.username" #username="ngModel">
+        <div [hidden]="username.valid || username.untouched" class="alert">
+          Username field is required
+        </div>
+      </div>
+      <div class="formGroup">
+        <input type="password" id="password" name="password" placeholder="Password" required [(ngModel)]="loginInfo.password" #password="ngModel">
+        <div [hidden]="password.valid || password.untouched" class="alert">
+          Password field is required
+        </div>
+      </div>
+      <button type="submit" class="signIn" [disabled]="!form.form.valid">Sign In</button>
+    </form>
+  </div>
+</div>
+<div class="footer" routerLink="/auth/sign-up" routerLinkActive="active">
+  Don't have a account?
+  <a>Sign Up</a>
+</div>
+<router-outlet></router-outlet>

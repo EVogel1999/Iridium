@@ -1,0 +1,12 @@
+.background {
+    background-image: url('../../assets/pictures/galaxy.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+}

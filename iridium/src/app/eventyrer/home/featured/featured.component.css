@@ -1,0 +1,17 @@
+.featureWrapper {
+    margin-top: 30px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 20px;
+    height: 500px;
+    z-index: 1;
+}
+.featureCardWrapper {
+    float: left;
+}
+.title {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
