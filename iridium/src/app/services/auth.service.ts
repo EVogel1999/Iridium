@@ -36,5 +36,11 @@ export class AuthService {
     })
   }
 
+  logout() {
+    if (this.user && this.isLoggedIn) {
+      this.user = undefined;
+      this.isLoggedIn = false;
+    }
+  }
 
 }
