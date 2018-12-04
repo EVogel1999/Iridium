@@ -18,7 +18,7 @@ export class FeaturedComponent implements OnInit {
 
   getCampaigns(): void {
     this.service.getCampaigns()
-      .subscribe(campaigns => this.featured = campaigns.splice(0, 4));
+      .subscribe(campaigns => this.featured = campaigns.slice(0, 4));
   }
 
 }

@@ -15,14 +15,13 @@ export class CampaignService {
 
   getCampaign(id: string): Observable<Campaign> {
     let result: Campaign = this.campaigns.find((val) => {
-      if (val.id === id) {
+      if (val.id === id)
         return true;
-      }
     });
     return of(result);
   }
   
   getCampaigns(): Observable<Campaign[]> {
-    return of(CAMPAIGNS);
+    return of(this.campaigns);
   }
 }
