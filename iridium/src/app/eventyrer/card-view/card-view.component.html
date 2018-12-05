@@ -1,14 +1,14 @@
 <app-navbar></app-navbar>
 <div class="header">
-  {{ campaign.name }}
+  {{ campaign.name || '' }}
   <button class="download">
     Download
   </button>
   <p>
-    Created by <a>{{ campaign.author }}</a>
+    Created by <a>{{ campaign.author || '' }}</a>
   </p>
   <p>
-    Last updated {{ campaign.date }}
+    Last updated {{ campaign.date || '' }}
   </p>
   <div class="label">
     Campaign
@@ -17,7 +17,7 @@
 <div class="info">
   <div class="section">
     Description
-    <p class="description">{{ campaign.description }}</p>
+    <p class="description">{{ campaign.description || '' }}</p>
   </div>
 </div>
 <app-footer></app-footer>

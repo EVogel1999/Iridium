@@ -1,0 +1,48 @@
+.background {
+    background-image: url('../../../assets/pictures/404.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    font-size: 150px;
+    margin: 0px;
+    color: white;
+}
+.wrapper {
+    margin-top: 200px;
+}
+.subtitle {
+    font-size: 30px;
+}
+hr {
+    border: none;
+    background-color: white;
+    height: 5px;
+    width: 700px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+button {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
+    border: none;
+    background: white;
+    padding: 20px;
+    color: #636363;
+    font-size: 16px;
+    margin: 0px;
+    cursor: pointer;
+}
+button:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+    background: transparent;
+    color: white;
+}

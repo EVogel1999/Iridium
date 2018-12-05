@@ -16,10 +16,11 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { CardViewComponent } from './eventyrer/card-view/card-view.component';
+import { NotFoundComponent } from './auth/not-found/not-found.component';
 import { Campaign } from './interfaces/campaign';
 import { User } from './interfaces/user'
 import { CampaignService } from './services/campaign.service';
-import { AuthService } from './services/auth.service'
+import { AuthService } from './services/auth.service';
 
 const appRoutes: Routes = [
   { path: 'auth/sign-in', component: LoginComponent },
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
   { path: 'eventyrer', component: EventyrerComponent },
   { path: 'eventyrer/campaign/:id', component: CardViewComponent },
   { path: 'bygger', component: ByggerComponent },
-  { path: '', redirectTo: '/eventyrer', pathMatch: 'full'}
+  { path: '', redirectTo: '/eventyrer', pathMatch: 'full'},
+  { path: '**', component: NotFoundComponent }
 ]
 
 @NgModule({
@@ -44,7 +46,8 @@ const appRoutes: Routes = [
     LoginComponent,
     SignUpComponent,
     ResetPasswordComponent,
-    CardViewComponent
+    CardViewComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

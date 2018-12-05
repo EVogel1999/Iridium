@@ -10,27 +10,17 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./card-view.component.css']
 })
 export class CardViewComponent implements OnInit {
-  campaign: Campaign = {
-    id: '',
-    name: '',
-    author: '',
-    date: '',
-    description: ''
-  };
+  campaign: Campaign;
   sub: Subscription;
 
   constructor(private route: ActivatedRoute, private router: Router, private service: CampaignService) { }
 
   ngOnInit() {
     this.sub = this.service.getCampaign(this.route.snapshot.params.id).subscribe(campaign => {
-      if (campaign !== undefined)
-        this.campaign = campaign;
+      this.campaign = campaign;
     });
-    // if (data === undefined) {
-    //   location.reload();
-    // }
-    // else {
-    // }
+    if (this.campaign === undefined)
+      this.router.navigate(['/eventyrer/campaign/']);
   }
 
   ngOnDestroy() {
