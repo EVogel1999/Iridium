@@ -24,16 +24,28 @@ export class AuthService {
       if (user.username === username && user.password === password) {
         this.user = user;
         this.isLoggedIn = true;
-        console.log('User logged in: ' + this.isLoggedIn);
       }
     });
   }
 
   createUser(username: string, password: string, name: string) {
+    let error = false;
     this.users.forEach(user => {
-      if (user.username === username)
-        throwError(new Error);
-    })
+      if (user.username === username) {
+        error = true;
+        throw(new Error('Username already in use'));
+      }
+    });
+    if (!error) {
+      let user: User = {
+        id: (this.users.length + 1) + '',
+        username: username,
+        password: password,
+        name: name,
+        campaigns: []
+      }
+      this.users.push(user);
+    }
   }
 
   logout() {

@@ -1,3 +1,47 @@
-<p>
-  sign-up works!
-</p>
+<div class="background">
+  <div class="wrapper">
+    <div *ngIf="errorMessages.create !== '' || errorMessages.username !== '' || errorMessages.password !== ''" class="loginError">
+      {{  errorMessages.create }}: 
+      {{ errorMessages.password }}
+      {{ errorMessages.username }}
+    </div>
+    <div class="tile">
+      <div class="title">
+        Great to See a New Face!
+      </div>
+      <hr>
+      <form #form="ngForm" (ngSubmit)="createUser()">
+        <div class="formGroup">
+          <input type="text" id="name" name="name" placeholder="Name" required [(ngModel)]="userInfo.name" #name="ngModel">
+          <div [hidden]="name.valid || name.untouched" class="alert">
+            Name field is required
+          </div>
+        </div>
+        <div class="formGroup">
+          <input type="text" id="username" name="username" placeholder="Username" required [(ngModel)]="userInfo.username" #username="ngModel">
+          <div [hidden]="username.valid || username.untouched" class="alert">
+            Username field is required
+          </div>
+        </div>
+        <div class="formGroup">
+          <input type="password" id="password" name="password" placeholder="Password" required [(ngModel)]="userInfo.password" #password="ngModel">
+          <div [hidden]="password.valid || password.untouched" class="alert">
+            Password field is required
+          </div>
+        </div>
+        <div class="formGroup">
+          <input type="password" id="check" name="check" placeholder="Retype Password" required [(ngModel)]="userInfo.check" #check="ngModel">
+          <div [hidden]="check.valid || check.untouched" class="alert">
+            You must retype your password
+          </div>
+        </div>
+        <button type="submit" class="signIn" [disabled]="!form.form.valid">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer" routerLink="/auth/sign-in" routerLinkActive="active">
+    Already have a account?
+    <a>Sign In</a>
+  </div>
+</div>
+<router-outlet></router-outlet>

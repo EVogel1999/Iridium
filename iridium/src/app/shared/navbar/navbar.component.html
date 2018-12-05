@@ -5,7 +5,7 @@
     <button class="userBtn" (click)="toggle()"></button>
   </div>
   <div *ngIf="!authService.isLoggedIn">
-      <button class="loginBtn" routerLink="/auth" routerLinkActive="active">Sign In</button>
+      <button class="loginBtn" routerLink="/auth/sign-in" routerLinkActive="active">Sign In</button>
   </div>
   <div class="meatball" *ngIf="meatball">
     <button class="item" (click)="toggle()">Profile</button>

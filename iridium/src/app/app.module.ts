@@ -22,7 +22,7 @@ import { CampaignService } from './services/campaign.service';
 import { AuthService } from './services/auth.service'
 
 const appRoutes: Routes = [
-  { path: 'auth', component: AuthComponent },
+  { path: 'auth/sign-in', component: LoginComponent },
   { path: 'auth/sign-up', component: SignUpComponent },
   { path: 'eventyrer', component: EventyrerComponent },
   { path: 'eventyrer/campaign/:id', component: CardViewComponent },
