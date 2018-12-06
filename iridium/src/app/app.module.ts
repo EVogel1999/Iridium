@@ -18,6 +18,7 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { CardViewComponent } from './eventyrer/card-view/card-view.component';
 import { NotFoundComponent } from './auth/not-found/not-found.component';
 import { ProfileComponent } from './eventyrer/profile/profile.component';
+import { BrowseBarComponent } from './shared/browse-bar/browse-bar.component';
 import { Campaign } from './interfaces/campaign';
 import { User } from './interfaces/user'
 import { CampaignService } from './services/campaign.service';
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     ResetPasswordComponent,
     CardViewComponent,
     NotFoundComponent,
-    ProfileComponent
+    ProfileComponent,
+    BrowseBarComponent
   ],
   imports: [
     BrowserModule,
