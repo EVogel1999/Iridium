@@ -20,7 +20,7 @@
 .tile {
     background-color: white;
     font-size: 16px;
-    color: #9b9b9b;
+    color: #424242;
     padding: 20px;
 }
 .title {
@@ -47,7 +47,7 @@ hr {
     background: #e6e6e6;
     margin-left: 600px;
     margin-right: 600px;
-    color: #636363;
+    color: #424242;
     text-align: center;
     padding: 10px;
     cursor: pointer;
@@ -65,7 +65,7 @@ input {
     width: 400px;
     height: 30px;
     padding: 10px;
-    color: #636363;
+    color: #424242;
     border: none;
     border-left-width: 5px;
     border-left-style: solid;

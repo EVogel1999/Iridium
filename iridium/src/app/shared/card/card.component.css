@@ -1,4 +1,6 @@
 .card {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
     background-color: white;
     width: 300px;
     height: 350px;
@@ -9,13 +11,15 @@
     cursor: pointer;
     z-index: 1;
 }
-.card::after {
-    clear: both;
+.card:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+    opacity: .9;
 }
 .cTitle{
     background-image: linear-gradient(to bottom right, #35637A, rgb(24, 141, 199));
-    width: 84%;
-    padding: 8%;
+    width: 300px;
+    padding: 25px;
     height: 20px;
     text-align: left;
     font-size: 20px;
@@ -25,6 +29,7 @@
     padding: 10px;
     font-size: 16px;
     color: #424242;
+    text-align: left;
 }
 .pad {
     padding-top: 1px;
