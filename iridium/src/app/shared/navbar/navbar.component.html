@@ -9,7 +9,7 @@
   </div>
   <div class="meatball" *ngIf="meatball">
     <button class="item" (click)="toggle()" routerLink="/eventyrer/profile/{{ authService.user.username }}" routerLinkActive="active">Profile</button>
-    <button class="item" (click)="toggle()">Reset Password</button>
+    <button class="item" (click)="toggle()" routerLink="/auth/reset-password" routerLinkActive="active">Reset Password</button>
     <button class="item" (click)="signout()">Sign Out</button>
   </div>
 </div>

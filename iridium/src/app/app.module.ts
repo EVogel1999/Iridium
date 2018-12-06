@@ -26,6 +26,7 @@ import { AuthService } from './services/auth.service';
 const appRoutes: Routes = [
   { path: 'auth/sign-in', component: LoginComponent },
   { path: 'auth/sign-up', component: SignUpComponent },
+  { path: 'auth/reset-password', component: ResetPasswordComponent },
   { path: 'eventyrer', component: EventyrerComponent },
   { path: 'eventyrer/campaign/:id', component: CardViewComponent },
   { path: 'eventyrer/profile/:username', component: ProfileComponent },

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
 import { Observable, of } from 'rxjs';
 import { USERS } from '../../assets/mock-data/users'
-import { Campaign } from '../interfaces/campaign';
 
 @Injectable({
   providedIn: 'root'
@@ -78,4 +77,7 @@ export class AuthService {
     return of(result);
   }
 
+  resetPassword(username: string, email: string) {
+    //To be implemented when I have written a backend API
+  }
 }

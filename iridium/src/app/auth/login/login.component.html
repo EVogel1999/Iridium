@@ -20,6 +20,9 @@
           <div [hidden]="password.valid || password.untouched" class="alert">
             Password field is required
           </div>
+          <div class="forgotPass" routerLink="/auth/reset-password" routerLinkActive="active">
+            Forgot your password?
+          </div>
         </div>
         <button type="submit" class="signIn" [disabled]="!form.form.valid">Sign In</button>
       </form>
