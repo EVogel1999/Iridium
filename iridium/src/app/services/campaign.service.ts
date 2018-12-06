@@ -24,4 +24,16 @@ export class CampaignService {
   getCampaigns(): Observable<Campaign[]> {
     return of(this.campaigns);
   }
+
+  getCampaignFromArray(ids: string[]): Observable<Campaign[]> {
+    let result = [];
+    ids.forEach(id => {
+      let camp: Campaign = this.campaigns.find(camp => {
+        if (camp.id === id)
+          return true;
+      });
+      result.push(camp);
+    });
+    return of(result);
+  }
 }

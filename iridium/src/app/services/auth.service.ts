@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
-import { throwError } from 'rxjs';
-
+import { Observable, of } from 'rxjs';
 import { USERS } from '../../assets/mock-data/users'
+import { Campaign } from '../interfaces/campaign';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class AuthService {
   users: User[];
 
   constructor() {
-    this.user = null;
+    this.user = undefined;
     this.isLoggedIn = false;
     this.users = USERS;
   }
@@ -28,7 +28,7 @@ export class AuthService {
     });
   }
 
-  createUser(username: string, password: string, name: string) {
+  createUser(username: string, password: string, name: string, email: string) {
     let error = false;
     this.users.forEach(user => {
       if (user.username === username) {
@@ -42,7 +42,9 @@ export class AuthService {
         username: username,
         password: password,
         name: name,
-        campaigns: []
+        campaigns: [],
+        bio: '',
+        email: email
       }
       this.users.push(user);
     }
@@ -53,6 +55,27 @@ export class AuthService {
       this.user = undefined;
       this.isLoggedIn = false;
     }
+  }
+
+  findUserByCampID(campid: string): Observable<User> {
+    let result: User = this.users.find(val => {
+      let campIDFound = false;
+      val.campaigns.forEach(camp => {
+        if (camp === campid)
+          campIDFound = true;
+      });
+      if (campIDFound)
+        return true;
+    });
+    return of(result);
+  }
+
+  findUserByUsername(username: string): Observable<User> {
+    let result: User = this.users.find(val => {
+      if (val.username === username)
+        return true;
+    });
+    return of(result);
   }
 
 }

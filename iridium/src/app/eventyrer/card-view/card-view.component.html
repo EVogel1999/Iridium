@@ -1,17 +1,19 @@
 <app-navbar></app-navbar>
 <div class="header">
-  {{ campaign.name || '' }}
-  <button class="download">
-    Download
-  </button>
-  <p>
-    Created by <a>{{ campaign.author || '' }}</a>
-  </p>
-  <p>
-    Last updated {{ campaign.date || '' }}
-  </p>
-  <div class="label">
-    Campaign
+  <div class="inlay">
+    {{ campaign.name || '' }}
+    <button class="download">
+      Download
+    </button>
+    <p>
+      Created by <a routerLink="/eventyrer/profile/{{ authorLink }}">{{ campaign.author || '' }}</a>
+    </p>
+    <p>
+      Last updated {{ campaign.date || '' }}
+    </p>
+    <div class="label">
+      Campaign
+    </div>
   </div>
 </div>
 <div class="info">

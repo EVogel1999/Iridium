@@ -17,6 +17,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { CardViewComponent } from './eventyrer/card-view/card-view.component';
 import { NotFoundComponent } from './auth/not-found/not-found.component';
+import { ProfileComponent } from './eventyrer/profile/profile.component';
 import { Campaign } from './interfaces/campaign';
 import { User } from './interfaces/user'
 import { CampaignService } from './services/campaign.service';
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'auth/sign-up', component: SignUpComponent },
   { path: 'eventyrer', component: EventyrerComponent },
   { path: 'eventyrer/campaign/:id', component: CardViewComponent },
+  { path: 'eventyrer/profile/:username', component: ProfileComponent },
   { path: 'bygger', component: ByggerComponent },
   { path: '', redirectTo: '/eventyrer', pathMatch: 'full'},
   { path: '**', component: NotFoundComponent }
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     SignUpComponent,
     ResetPasswordComponent,
     CardViewComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

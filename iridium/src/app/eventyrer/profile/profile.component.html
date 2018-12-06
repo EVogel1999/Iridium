@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="header">
+  <div class="inlay">
+      Hi {{ userName }}!
+      <hr>
+      <div class="title" *ngIf="authService.user !== user">
+        This is {{ user.name }}'s profile
+      </div>
+      <div class="title" *ngIf="authService.user === user">
+        This is your profile
+      </div>
+  </div>
+</div>
+<div class="bio">
+  <div class="title">
+    Biography
+  </div>
+  <div class="section">
+    {{ user.bio }}
+  </div>
+  <div class="title">
+    Campaigns
+  </div>
+</div>
+<div *ngIf="campaigns !== undefined" class="cards">
+  <app-card *ngFor="let c of campaigns" [campaign] = 'c'></app-card>
+</div>
+<app-footer></app-footer>

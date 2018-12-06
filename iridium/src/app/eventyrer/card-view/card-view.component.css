@@ -1,9 +1,6 @@
 .header {
-    padding-left: 220px;
-    padding-top: 150px;
-    padding-bottom: 70px;
     background-image: linear-gradient(to bottom right, #35637A, rgb(24, 141, 199));
-    color: white;
+    color: #636363;
     font-size: 35px;
 }
 .download {
@@ -11,6 +8,7 @@
     transition-duration: .2s;
     float: right;
     margin-right: 250px;
+    margin-top: 30px;
     background-color: white;
     color: #636363;
     border: none;
@@ -27,7 +25,7 @@
     border-color: white;
     border-width: 2px;
     border-style: solid;
-    color: white;
+    color: #636363;
     background-color: transparent;
 }
 .info {
@@ -59,8 +57,24 @@ p {
     font-size: 18px;
 }
 a {
-    border-bottom-style: solid;
-    border-bottom-color: white;
-    border-bottom-width: 1px;
+    text-decoration: none;
     cursor: pointer;
+    color: #35637A;
+    border-bottom-color: #35637A;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+a:visited {
+    color: #35637A;
+}
+.inlay {
+    background-image: url('../../../assets/pictures/mountain-inlay.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 100px;
+    height: 200px;
+    padding-left: 220px;
+    padding-top: 150px;
+    padding-bottom: 70px;
 }

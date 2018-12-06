@@ -1,0 +1,51 @@
+.header {
+    background-image: linear-gradient(to bottom right, #35637A, rgb(24, 141, 199));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    width: 100%;
+}
+.inlay {
+    background-image: url('../../../assets/pictures/forest-inlay.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 100px;
+    height: 300px;
+}
+.bio {
+    background: white;
+    color: #424242;
+    padding: 30px;
+    text-align: left;
+    z-index: 0;
+    margin: 300px;
+    margin-top: 70px;
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+.title {
+    font-size: 24px;
+}
+.section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+hr {
+    width: 600px;
+    background-color: white;
+    border: none;
+    height: 2px;
+}
+.cards {
+    margin-right: 300px;
+    margin-left: 300px;
+    background: white;
+    padding: 30px;
+    margin-bottom: 70px;
+    text-align: center;
+}

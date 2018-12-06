@@ -8,7 +8,7 @@
       <button class="loginBtn" routerLink="/auth/sign-in" routerLinkActive="active">Sign In</button>
   </div>
   <div class="meatball" *ngIf="meatball">
-    <button class="item" (click)="toggle()">Profile</button>
+    <button class="item" (click)="toggle()" routerLink="/eventyrer/profile/{{ authService.user.username }}" routerLinkActive="active">Profile</button>
     <button class="item" (click)="toggle()">Reset Password</button>
     <button class="item" (click)="signout()">Sign Out</button>
   </div>

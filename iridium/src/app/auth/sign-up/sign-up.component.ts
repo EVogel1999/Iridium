@@ -13,7 +13,8 @@ export class SignUpComponent implements OnInit {
     username: '',
     password: '',
     name: '',
-    check: ''
+    check: '',
+    email: ''
   }
   errorMessages: any = {
     create: '',
@@ -48,7 +49,7 @@ export class SignUpComponent implements OnInit {
 
       this.errorMessages.create = '';
       if (this.userInfo.password === this.userInfo.check) {
-        this.authService.createUser(this.userInfo.username, this.userInfo.password, this.userInfo.name);
+        this.authService.createUser(this.userInfo.username, this.userInfo.password, this.userInfo.name, this.userInfo.email);
         this.authService.login(this.userInfo.username, this.userInfo.password);
         this.router.navigate(['']);
       }

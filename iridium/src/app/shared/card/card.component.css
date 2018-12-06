@@ -4,7 +4,7 @@
     height: 350px;
     margin: 10px;
     overflow: hidden;
-    float: left;
+    display: inline-block;
     box-shadow: 1px 1px 10px #444444;
     cursor: pointer;
     z-index: 1;
