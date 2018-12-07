@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { CampaignService } from 'src/app/services/campaign.service';
 import { Campaign } from 'src/app/interfaces/campaign';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-library',
@@ -14,7 +15,7 @@ export class LibraryComponent implements OnInit {
 
   campSub: Subscription;
 
-  constructor(private authService: AuthService, private campService: CampaignService) { }
+  constructor(private authService: AuthService, private campService: CampaignService, private router: Router) { }
 
   ngOnInit() {
     if (this.authService.user !== undefined)
@@ -22,6 +23,8 @@ export class LibraryComponent implements OnInit {
         if (camps !== undefined)
           this.library = camps;
       });
+    else
+      this.router.navigate(['']);
   }
 
   ngOnDestroy() {
