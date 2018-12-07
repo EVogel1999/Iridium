@@ -4,6 +4,7 @@ export class User {
     password: string;
     name: string;
     campaigns: string[];
+    library: string[];
     bio: string;
     email: string;
 }

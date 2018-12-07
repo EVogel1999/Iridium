@@ -52,6 +52,7 @@ export class AuthService {
         password: password,
         name: name,
         campaigns: [],
+        library: [],
         bio: '',
         email: email
       }

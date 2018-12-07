@@ -2,7 +2,7 @@
   <button class="back" routerLink="{{ authService.prevURL }}">Back</button>
   <div *ngIf="authService.isLoggedIn">
     <button class="buildBtn"></button>
-    <button class="libraryBtn"></button>
+    <button class="libraryBtn" routerLink="/eventyrer/library/{{ authService.user.username }}"></button>
     <button class="userBtn" (click)="toggle()"></button>
   </div>
   <div *ngIf="!authService.isLoggedIn">

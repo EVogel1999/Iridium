@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="header">
+  <div class="inlay">
+    Your Library
+  </div>
+</div>
+<div class="section">
+  Campaigns
+  <div *ngIf="library.length !== 0" class="cards">
+    <app-card *ngFor="let c of library" [campaign]='c'></app-card>
+  </div>
+  <div *ngIf="library.length === 0" class="noCard">
+    You do not have any campaigns in your library.  Click <a>here</a> to browse campaigns.
+  </div>
+</div>
+<app-footer></app-footer>

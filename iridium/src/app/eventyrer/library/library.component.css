@@ -1,0 +1,42 @@
+.header {
+    background-image: linear-gradient(to bottom right, #35637A, rgb(24, 141, 199));
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+.inlay {
+    background-image: url('../../../assets/pictures/desert-inlay.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    padding-top: 120px;
+}
+.section {
+    background: white;
+    box-shadow: 1px 1px 10px #444444;
+    margin: 100px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 30px;
+    font-size: 25px;
+    color: black;
+}
+.cards {
+    margin-top: 30px;
+    text-align: center;
+}
+.noCard {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px;
+    color: #424242;
+}
+a {
+    color: #35637A;
+    cursor: pointer;
+    border-bottom: #35637A;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
