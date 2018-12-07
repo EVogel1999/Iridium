@@ -1,5 +1,5 @@
 <div class="navbar">
-  <button class="back" routerLink="{{ authService.prevURL }}">Back</button>
+  <button class="homeBtn" routerLink=""></button>
   <div *ngIf="authService.isLoggedIn">
     <button class="buildBtn"></button>
     <button class="libraryBtn" routerLink="/eventyrer/library/{{ authService.user.username }}"></button>

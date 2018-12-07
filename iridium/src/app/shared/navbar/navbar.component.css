@@ -92,10 +92,17 @@ button {
     background-color: #424242;
     color: white;
 }
-.back {
+.homeBtn {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
+    background-image: url('../../../assets/pictures/logo.png');
+    width: 75px;
+    height: 75px;
     float: left;
-    background-color: black;
-    color: white;
     margin-left: 10px;
-    border-radius: 50%;
+}
+.homeBtn:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+    opacity: .8;
 }
