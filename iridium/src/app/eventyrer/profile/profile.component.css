@@ -12,6 +12,7 @@
     background-image: url('../../../assets/pictures/forest-inlay.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     padding-top: 100px;
     height: 300px;
 }

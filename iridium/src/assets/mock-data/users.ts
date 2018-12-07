@@ -11,7 +11,6 @@ export const USERS: User[] = [
             '5'
         ],
         library: [
-            '2',
             '3',
             '4',
             '6'

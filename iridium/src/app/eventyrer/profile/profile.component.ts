@@ -22,7 +22,8 @@ export class ProfileComponent implements OnInit {
     password: '',
     bio: '',
     email: '',
-    campaigns: []
+    campaigns: [],
+    library: []
   };
   campaigns: Campaign[] = [];
 

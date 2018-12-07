@@ -13,8 +13,10 @@ import { AuthService } from 'src/app/services/auth.service';
 export class CardViewComponent implements OnInit {
   campaign: Campaign;
   campSub: Subscription;
-  authSub: Subscription;
-  authorLink: string;
+  authSubUser: Subscription;
+  authSubLibrary: Subscription;
+  authorLink: string = '';
+  isInLibrary: boolean = true;
 
   constructor(private route: ActivatedRoute, private router: Router, private service: CampaignService, private authService: AuthService) { }
 
@@ -25,15 +27,31 @@ export class CardViewComponent implements OnInit {
     });
     if (this.campaign === undefined)
       this.router.navigate(['/eventyrer/campaign/']);
-    this.authSub = this.authService.findUserByCampID(this.campaign.id)
+    this.authSubUser = this.authService.findUserByCampID(this.campaign.id)
     .subscribe(user => {
-      this.authorLink = user.username;
+      if (user !== undefined)
+        this.authorLink = user.username;
     });
+    this.authSubLibrary = this.authService.checkInLibrary(this.campaign.id)
+    .subscribe(val => {
+      this.isInLibrary = val;
+    })
+  }
+
+  addToLibrary() {
+    this.authService.addToLibrary(this.campaign.id);
+    this.isInLibrary = true;
+  }
+
+  removeFromLibrary() {
+    this.authService.removeFromLibrary(this.campaign.id);
+    this.isInLibrary = false;
   }
 
   ngOnDestroy() {
     this.campSub.unsubscribe();
-    this.authSub.unsubscribe();
+    this.authSubUser.unsubscribe();
+    this.authSubLibrary.unsubscribe();
   }
 
 }

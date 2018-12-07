@@ -91,4 +91,35 @@ export class AuthService {
   resetPassword(username: string, email: string) {
     //To be implemented when I have written a backend API
   }
+
+  addToLibrary(campID: string) {
+    let idFound = this.user.library.find(val => {
+      if (val === campID)
+        return true;
+    });
+    if (idFound === undefined)
+      this.user.library.push(campID);
+  }
+
+  removeFromLibrary(campID: string) {
+    let id = -1;
+    let camp = this.user.library.find(val => {
+      id++;
+      if (val === campID)
+        return true;
+    });
+    if (camp !== undefined)
+      this.user.library.splice(id, 1);
+  }
+
+  checkInLibrary(campID: string): Observable<boolean> {
+    if (this.user !== undefined) {
+      let idFound = this.user.library.find(val => {
+        if (val === campID)
+          return true;
+      });
+      return of(idFound !== undefined);
+    }
+    return of(false);
+  }
 }

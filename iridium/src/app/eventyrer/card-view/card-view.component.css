@@ -3,30 +3,51 @@
     color: #636363;
     font-size: 35px;
 }
-.download {
+button {
     -moz-transition-duration: .2s;
     transition-duration: .2s;
-    float: right;
-    margin-right: 250px;
-    margin-top: 30px;
     background-color: white;
+    display: block;
+    margin: 15px;
     color: #636363;
     border: none;
     cursor: pointer;
     font-size: 20px;
-    width: 200px;
-    height: 120px;
+    width: 210px;
+    height: 60px;
     opacity: 1;
     box-shadow: #636363 1px 1px 20px;
 }
-.download:hover {
+button:hover {
     -moz-transition-duration: .4s;
     transition-duration: .4s;
     border-color: white;
     border-width: 2px;
     border-style: solid;
-    color: #636363;
     background-color: transparent;
+}
+button:disabled {
+    background: #636363;
+    color: white;
+    cursor: context-menu;
+    box-shadow: none;
+}
+button:disabled:hover {
+    border: none;
+}
+.remove {
+    background-color: #ffa5a5;
+    color: #c40b0b;
+}
+.remove:hover {
+    border: none;
+    background-color: #ffa5a5;
+    opacity: .9;
+}
+.menu {
+    float: right;
+    margin-right: 250px;
+    margin-top: 15px;
 }
 .info {
     margin: 200px;

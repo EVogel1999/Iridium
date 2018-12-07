@@ -2,9 +2,17 @@
 <div class="header">
   <div class="inlay">
     {{ campaign.name || '' }}
-    <button class="download">
-      Download
-    </button>
+    <div *ngIf="authService.user !== undefined" class="menu">
+      <button>
+        Download
+      </button>
+      <button [disabled]="authorLink === authService.user.username" *ngIf="!isInLibrary" (click)="addToLibrary()">
+        Add to Library
+      </button>
+      <button [disabled]="authorLink === authService.user.username" *ngIf="isInLibrary" (click)="removeFromLibrary()" class="remove">
+        Remove from Library
+      </button>
+    </div>
     <p>
       Created by <a routerLink="/eventyrer/profile/{{ authorLink }}" routerLinkActive="active">{{ campaign.author || '' }}</a>
     </p>
