@@ -2,20 +2,30 @@ import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
 import { Observable, of } from 'rxjs';
 import { USERS } from '../../assets/mock-data/users'
+import { Router, NavigationEnd } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  prevURL: String = '';
+  currentURL: String = '';
   user: User;
   isLoggedIn: boolean;
   users: User[];
 
-  constructor() {
+  constructor(private router: Router) {
     this.user = undefined;
     this.isLoggedIn = false;
     this.users = USERS;
+
+    this.currentURL = this.router.url;
+    router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {        
+        this.prevURL = this.currentURL;
+        this.currentURL = event.url;
+      };
+    });
   }
 
   login(username: string, password: string) {

@@ -23,6 +23,9 @@ export class ResetPasswordComponent implements OnInit {
 
   reset() {
     this.authService.resetPassword(this.resetInfo.username, this.resetInfo.email);
-    this.router.navigate(['']);
+    if (this.authService.prevURL !== '/auth/sign-up' && this.authService.prevURL !== '/auth/sign-in')
+      this.router.navigate([this.authService.prevURL]);
+    else
+      this.router.navigate(['']);
   }
 }

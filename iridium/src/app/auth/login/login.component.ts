@@ -25,7 +25,10 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginInfo.username, this.loginInfo.password);
     if (this.authService.isLoggedIn) {
       this.loginError = false;
-      this.router.navigate(['']);
+      if (this.authService.prevURL !== '/auth/sign-up' && this.authService.prevURL !== '/auth/reset-password')
+        this.router.navigate([this.authService.prevURL]);
+      else
+        this.router.navigate(['']);
     }
     else
       this.loginError = true;

@@ -1,4 +1,5 @@
 <div class="navbar">
+  <button class="back" routerLink="{{ authService.prevURL }}">Back</button>
   <div *ngIf="authService.isLoggedIn">
     <button class="buildBtn"></button>
     <button class="libraryBtn"></button>

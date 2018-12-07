@@ -6,7 +6,7 @@
       Download
     </button>
     <p>
-      Created by <a routerLink="/eventyrer/profile/{{ authorLink }}">{{ campaign.author || '' }}</a>
+      Created by <a routerLink="/eventyrer/profile/{{ authorLink }}" routerLinkActive="active">{{ campaign.author || '' }}</a>
     </p>
     <p>
       Last updated {{ campaign.date || '' }}
