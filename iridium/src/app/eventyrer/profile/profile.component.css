@@ -45,3 +45,72 @@ hr {
     text-align: center;
     padding-top: 30px;
 }
+.bioEditBtn {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
+    background-color: transparent;
+    background-image: url('../../../assets/pictures/edit.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    border: none;
+    cursor: pointer;
+}
+.bioEditBtn:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+    opacity: .8;
+}
+textarea {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 950px;
+    height: 350px;
+    font-size: 16px;
+    margin-top: 30px;
+    padding: 10px;
+}
+form {
+    text-align: center;
+}
+.group {
+    text-align: left;
+    margin-left: 50px;
+}
+.submit {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
+    margin: 10px;
+    background-color: #35637A;
+    color: white;
+    border: none;
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100px;
+}
+.submit:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+    background-color: transparent;
+    color: #35637A;
+}
+.cancel {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
+    margin: 10px;
+    background-color: #ffa5a5;
+    color: #c40b0b;
+    border: none;
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100px;
+}
+.cancel:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;    
+    opacity: .8;
+}

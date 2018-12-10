@@ -26,6 +26,8 @@ export class ProfileComponent implements OnInit {
     library: []
   };
   campaigns: Campaign[] = [];
+  edit: boolean = false;
+  biography: string = '';
 
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute, private campService: CampaignService) { }
 
@@ -33,8 +35,10 @@ export class ProfileComponent implements OnInit {
     if (this.authService.user)
       this.userName = this.authService.user.name;
     this.authSub = this.authService.findUserByUsername(this.route.snapshot.params.username).subscribe(user => {
-      if (user !== undefined)
+      if (user !== undefined) {
         this.user = user;
+        this.biography = user.bio;
+      }
     });
     if (this.user !== undefined) {
       this.campSub = this.campService.getCampaignFromArray(this.user.campaigns).subscribe(camps => {
@@ -49,6 +53,17 @@ export class ProfileComponent implements OnInit {
   ngOnDestroy() {
     this.authSub.unsubscribe();
     this.campSub.unsubscribe();
+  }
+
+  toggleEdit() {
+    this.biography = this.user.bio;
+    this.edit = !this.edit;
+  }
+
+  saveBio() {
+    this.user.bio = this.biography;
+    this.authService.updateBio(this.biography);
+    this.edit = !this.edit;
   }
 
 }

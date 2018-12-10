@@ -15,8 +15,20 @@
   <div class="bio">
     <div class="title">
       Biography
+      <button *ngIf="authService.isLoggedIn" class="bioEditBtn" (click)="toggleEdit()"></button>
+
+      <form *ngIf="edit" #form="ngForm" (ngSubmit)="saveBio()">
+        <textarea type="text" id="bio" name="bio" [(ngModel)]="biography" #bio="ngModel">
+          {{ bio }}
+        </textarea>
+        <div class="group">
+          <button class="submit" type="submit">Save</button>
+          <button class="cancel" (click)="toggleEdit()">Cancel</button>
+        </div>
+      </form>
+
     </div>
-    <div class="section">
+    <div *ngIf="!edit" class="section">
       {{ user.bio }}
     </div>
     <div class="title">

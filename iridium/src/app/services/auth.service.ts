@@ -122,4 +122,12 @@ export class AuthService {
     }
     return of(false);
   }
+
+  updateBio(bio: string) {
+    this.user.bio = bio;
+    this.users.forEach(user => {
+      if (this.user === user)
+        user.bio = bio;
+    });
+  }
 }
