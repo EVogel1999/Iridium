@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-browse-bar',
@@ -11,12 +12,15 @@ export class BrowseBarComponent implements OnInit {
     query: ''
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  browse() {
-    
+  search() {
+    this.router.navigate(['/eventyrer/browse/', { query: this.browseInfo.query, currPage: 1 }]);
+  }
+  browseAll() {
+    this.router.navigate(['eventyrer/browse/', { query: this.browseInfo.query, currPage: 1 }]);
   }
 }

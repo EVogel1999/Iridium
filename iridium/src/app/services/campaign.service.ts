@@ -36,4 +36,16 @@ export class CampaignService {
     });
     return of(result);
   }
+
+  searchCampaigns(query: string): Observable<Campaign[]> {
+    if (query === '' || query === undefined || query === 'undefined')
+      return of(this.campaigns);
+
+    let result = [];
+    this.campaigns.forEach(camp => {
+      if (camp.author === query || camp.name === query)
+        result.push(camp);
+    });
+    return of(result);
+  }
 }

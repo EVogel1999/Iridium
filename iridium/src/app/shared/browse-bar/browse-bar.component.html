@@ -1,7 +1,7 @@
 <form #form="ngForm" (ngSubmit)="search()">
   <input type="text" id="browse" name="browse" placeholder="Search for a Campaign" [(ngModel)]="browseInfo.query" #browse="ngModel">
   <div class="btnWrapper">
-    <button class="allBtn">Browse All</button>
+    <button class="allBtn" (click)="browsAll()">Browse All</button>
     <button type="submit" class="browseBtn">Search</button>
   </div>
 </form>

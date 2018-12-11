@@ -1,0 +1,88 @@
+.cardsWrapper {
+    margin: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.pageCtrl {
+    margin-top: 30px;
+    text-align: center;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
+    padding: 10px;
+    width: 70px;
+    color: #35637A;
+    background-color: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    list-style-type: none;
+    text-align: center;
+    cursor: pointer;
+}
+li:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+    background-color: #35637A;
+    color: white;
+}
+.noObjects {
+    height: 100%;
+    width: 100%;
+    color: white;
+    background-color: #35637A;
+    padding: 30px;
+    font-size: 18px;
+    margin-top: 80px;
+    margin-bottom: 325px;
+}
+.searchBackgroundWrapper {
+    background-image: linear-gradient(to bottom right, #35637A, rgb(24, 141, 199));
+}
+.searchWrapper {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url('../../../assets/pictures/mountain-inlay.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+input {
+    width: 600px;
+    height: 30px;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    color: #424242;
+    box-shadow: 1px 1px 10px #444444;    
+}
+.searchBtn {
+    -moz-transition-duration: .2s;
+    transition-duration: .2s;
+    border: none;
+    background-color: white;
+    color: #424242;
+    font-size: 18px;
+    width: 120px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px #444444;
+    margin-left: 20px;
+}
+.searchBtn:hover {
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+}

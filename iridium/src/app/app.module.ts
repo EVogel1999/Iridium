@@ -20,6 +20,7 @@ import { NotFoundComponent } from './auth/not-found/not-found.component';
 import { ProfileComponent } from './eventyrer/profile/profile.component';
 import { BrowseBarComponent } from './shared/browse-bar/browse-bar.component';
 import { LibraryComponent } from './eventyrer/library/library.component';
+import { BrowseComponent } from './eventyrer/browse/browse.component';
 import { Campaign } from './interfaces/campaign';
 import { User } from './interfaces/user'
 import { CampaignService } from './services/campaign.service';
@@ -33,6 +34,8 @@ const appRoutes: Routes = [
   { path: 'eventyrer/campaign/:id', component: CardViewComponent },
   { path: 'eventyrer/profile/:username', component: ProfileComponent },
   { path: 'eventyrer/library/:username', component: LibraryComponent },
+  { path: 'eventyrer/browse', component: BrowseComponent },
+  { path: 'eventyrer/browse/:query&:currPage', component: BrowseComponent },
   { path: 'bygger', component: ByggerComponent },
   { path: '', redirectTo: '/eventyrer', pathMatch: 'full'},
   { path: '**', component: NotFoundComponent }
@@ -56,7 +59,8 @@ const appRoutes: Routes = [
     NotFoundComponent,
     ProfileComponent,
     BrowseBarComponent,
-    LibraryComponent
+    LibraryComponent,
+    BrowseComponent
   ],
   imports: [
     BrowserModule,

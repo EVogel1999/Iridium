@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="searchBackgroundWrapper">
+  <div class="searchWrapper">
+    <form #form="ngForm" (ngSubmit)="search()">
+      <input type="text" placeholder="Search for a Campaign" id="browse" name="browse" #browse="ngModel" [(ngModel)]='query.newQuery'>
+      <button class="searchBtn" type="submit">Search</button>
+    </form>
+   </div>
+</div>
+<div class="cardsWrapper">
+  <div *ngIf="!campaigns.length" class="noObjects">
+    There are no campaigns under that query.
+  </div>
+  <app-card *ngFor="let c of displayed" [campaign]="c"></app-card>
+  <div *ngIf="campaigns.length" class="pageCtrl">
+    <ul>
+      <li *ngIf="currPage > 1" (click)="changePage(currPage - 1)">Back</li>
+      <li *ngFor="let p of shownPages" (click)="changePage(p)">{{ p }}</li>
+      <li *ngIf="currPage < pages.length" (click)="changePage(currPage + 1)">Next</li>
+    </ul>
+  </div>
+</div>
+<app-footer></app-footer>
